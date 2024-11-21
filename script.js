@@ -5,31 +5,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalPriceDisplay = document.getElementById("totalPrice");
 
     calculateBtn.addEventListener("click", () => {
-        // 入力値を取得
+   
         const quantity = parseFloat(quantityInput.value);
         const productPrice = parseInt(productSelect.value, 10);
 
-        // 入力のバリデーション
+       
         if (isNaN(quantity)) {
-            alert("数量を入力してください！");
+            alert("Пожалуйста, введите количество!");
             return;
         }
 
         if (quantity <= 0) {
-            alert("数量は正の整数を入力してください！負の値やゼロは許可されていません。");
+            alert("Количество должно быть положительным целым числом! Отрицательные значения и ноль не допускаются.");
             return;
         }
 
         if (!Number.isInteger(quantity)) {
-            alert("数量に小数点を含めることはできません！");
+            alert("Количество не может содержать десятичные числа!");
             return;
         }
 
-        // 合計金額を計算
+        
         const totalPrice = quantity * productPrice;
 
-        // 結果を表示
+        
         totalPriceDisplay.textContent = totalPrice;
     });
 });
-
